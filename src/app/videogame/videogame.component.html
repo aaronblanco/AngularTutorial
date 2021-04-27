@@ -1,0 +1,10 @@
+<h2>Mis videojuegos</h2>
+<ul class="videogames">
+  <li *ngFor="let videogame of videogames"
+    [class.selected]="videogame === selectedVideogame"
+    (click)="onSelect(videogame)">
+    <span class="badge">{{videogame.id}}</span> {{videogame.name}}
+  </li>
+</ul>
+
+<app-videogame-detail [videogame]="selectedVideogame"></app-videogame-detail>

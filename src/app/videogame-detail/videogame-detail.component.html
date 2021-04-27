@@ -1,0 +1,10 @@
+<div *ngIf="videogame">
+
+  <h2>{{videogame.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{videogame.id}}</div>
+  <div>
+    <label for="videogame-name">Videogame name: </label>
+    <input id="videogame-name" [(ngModel)]="videogame.name" placeholder="name">
+  </div>
+
+</div>
