@@ -1,0 +1,7 @@
+<h2>Top Videogame</h2>
+<div class="videogame-menu">
+  <a *ngFor="let videogame of videogames"
+    routerLink="/detail/{{videogame.id}}">
+    {{videogame.name}}
+  </a>
+</div>

@@ -13,7 +13,15 @@ export class VideogameService {
 
   getVideogames(): Observable<Videogame[]> {
     const videogames = of(VIDEOGAMES);
-    this.messageService.add('VideoGameService: fetched videogames');
+    this.messageService.add('VideogameService: fetched videogames');
     return videogames;
   }
+  getVideogame(id: number): Observable<Videogame> {
+    // For now, assume that a hero with the specified `id` always exists.
+    // Error handling will be added in the next step of the tutorial.
+    const games = VIDEOGAMES.find(h => h.id === id) as Videogame;
+    this.messageService.add(`VideogameService: fetched videogame id=${id}`);
+    return of(games);
+  }
+
 }

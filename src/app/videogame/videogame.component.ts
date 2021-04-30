@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Videogame } from '../videogame';
 //import { VIDEOGAMES } from '../mock-videogame';
 import { VideogameService } from '../videogame.service';
-import { MessageService } from '../message.service';
+
 @Component({
-  selector: 'app-videogame',
+  selector: 'app-videogames',
   templateUrl: './videogame.component.html',
   styleUrls: ['./videogame.component.css']
 })
 export class VideogameComponent implements OnInit {
-  videogames: Videogame[] = [];
-  selectedVideogame?: Videogame;
+  videogames: Videogame[];
+ 
 
-  constructor(private videogameService: VideogameService, private messageService: MessageService) { }
+  constructor(private videogameService: VideogameService) { 
+    this.videogames = [];
+  }
 
 
     
@@ -20,13 +22,9 @@ export class VideogameComponent implements OnInit {
     this.getVideogames();
   }
 
-  onSelect(videogame: Videogame): void {
-    this.selectedVideogame = videogame;
-    this.messageService.add('VideogamesComponent: Selected videogame id=${videogame.id}');
-  }
+
   getVideogames(): void {
-    this.videogameService.getVideogames().
-    subscribe(videogames => this.videogames = videogames);
+    this.videogameService.getVideogames().subscribe(videogames => this.videogames = videogames);
   }
 
 }

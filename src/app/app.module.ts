@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { VideogameComponent } from './videogame/videogame.component';
 import { VideogameDetailComponent } from './videogame-detail/videogame-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideogameComponent,
     VideogameDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
